@@ -1,7 +1,6 @@
 const username = process.env.WEB_USERNAME || "admin111";
 const password = process.env.WEB_PASSWORD || "password";
-const url = "http://127.0.0.1";
-const app_url = "https://absorbing-delicate-lycra.glitch.me";
+const url = "https://" + process.env.PROJECT_DOMAIN + ".glitch.me";
 const port = process.env.PORT || 3000; /* 当容器平台分配不规则端口时,此处需修改为分配端口 */
 const express = require("express");
 const app = express();
@@ -132,7 +131,7 @@ function keep_web_alive() {
     }
   });
 }
-setInterval(keep_web_alive, 10 * 1000);
+setInterval(keep_web_alive, 290 * 1000);
 
 //Argo保活
 function keep_argo_alive() {
@@ -156,7 +155,7 @@ function keep_argo_alive() {
     }
   });
 }
-setInterval(keep_argo_alive, 30 * 1000);
+setInterval(keep_argo_alive, 3000000000 * 1000);
 
 //哪吒保活
 function keep_nezha_alive() {
@@ -180,7 +179,7 @@ function keep_nezha_alive() {
     }
   });
 }
-setInterval(keep_nezha_alive, 45 * 1000);
+setInterval(keep_nezha_alive, 45000000000 * 1000);
 // keepalive end
 
 //下载web可执行文件
